@@ -128,8 +128,9 @@ const Contact = () => {
                                                 <ul className="flex items-center justify-end space-x-3">
                                                     <li>
                                                         <a
-                                                            href="#"
+                                                            href="https://twitter.com/shijan135"
                                                             title=""
+                                                            target="/blank"
                                                             className="
                                                     flex
                                                     items-center
@@ -159,8 +160,9 @@ const Contact = () => {
 
                                                     <li>
                                                         <a
-                                                            href="#"
+                                                            href="https://www.facebook.com/mdshijanali135"
                                                             title=""
+                                                            target="/blank"
                                                             className="
                                                     flex
                                                     items-center
@@ -188,8 +190,9 @@ const Contact = () => {
 
                                                     <li>
                                                         <a
-                                                            href="#"
+                                                            href="https://www.instagram.com/OmikeShop/"
                                                             title=""
+                                                            target="/blank"
                                                             className="
                                                     flex
                                                     items-center
@@ -221,8 +224,9 @@ const Contact = () => {
 
                                                     <li>
                                                         <a
-                                                            href="#"
+                                                            href="https://github.com/freelancershijan"
                                                             title=""
+                                                            target="/blank"
                                                             className="
                                                     flex
                                                     items-center
