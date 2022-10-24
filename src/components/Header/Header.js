@@ -15,7 +15,7 @@ const Header = () => {
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to='/'>
-                            <img className='h-14' src={logo} alt="" />
+                            <img className='h-10' src={logo} alt="" />
                         </Link>
                         <div className="md:hidden">
                             <button
@@ -65,10 +65,10 @@ const Header = () => {
                                 <Link to='/'>Home</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <Link to='/about'>About</Link>
+                                <Link to='/courses'>Courses</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200">
-                                <Link to='/services'>Services</Link>
+                                <Link to='/blog'>Blog</Link>
                             </li>
                             <li className="text-white hover:text-indigo-200">
                                 <Link to='/contact'>Contact</Link>
@@ -78,14 +78,16 @@ const Header = () => {
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
 
-                            {user?.uid && <div className='flex items-center'>
-                                <UserIcon className='w-6 h-6 text-white'></UserIcon>
-                                <p className='text-white my-5'>{user?.displayName}</p>
-                            </div>}
+
+                            {
+                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                            }
+
+
 
                             {
                                 user?.uid ? <Link onClick={logOut}
-                                    to='/'
+
                                     className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                 >
                                     Sign Out
@@ -111,16 +113,18 @@ const Header = () => {
                 <div className="hidden md:flex">
 
 
-                    {user?.uid && <div className='flex items-center mr-5'>
-                        <img className='w-10 h-10 rounded-full mr-2' src={user?.photoURL} alt="" />
-                        <p className='text-white'>{user?.displayName}</p>
-                    </div>}
+
+                    {
+                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                    }
+
+
 
 
                     {
                         user?.uid ? <Link onClick={logOut}
-                            to='/'
-                            className="px-4  py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
+
+                            className="px-4 text-center py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                         >
                             Logout
                         </Link> :

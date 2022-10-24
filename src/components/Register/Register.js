@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.png'
 import img from '../../images/shijan.jpg'
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
@@ -8,8 +8,8 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
     const [showpass, setShowPass] = useState(false);
-
-    const { createUser, providerLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const { createUser, providerLogin, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,7 +23,10 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log('New Created User', user)
+                handleUpdateProfile(name, photoURL);
+                form.reset();
+                navigate('/');
+                console.log('New Created User', user);
             })
             .catch(error => {
                 console.error('create user account error', error)
@@ -34,6 +37,22 @@ const Register = () => {
 
     }
 
+    const handleUpdateProfile = (name, photoURL) => {
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+
+        updateUserProfile(profile)
+            .then(() => {
+
+                console.log('Update USer Phofile')
+            })
+            .catch(error => {
+                console.error('create user account error', error)
+            })
+
+    }
 
 
     const googleProvider = new GoogleAuthProvider();
@@ -41,7 +60,8 @@ const Register = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
-                console.log('New User From Google', user)
+                console.log('New User From Google', user);
+                navigate('/');
             })
             .catch(error => {
                 console.error('Google User SIgn In error', error)
@@ -52,7 +72,8 @@ const Register = () => {
         providerLogin(githubProvider)
             .then(result => {
                 const user = result.user;
-                console.log('New User From Github', user)
+                console.log('New User From Github', user);
+                navigate('/');
             })
             .catch(error => {
                 console.error('Github User SIgn In error', error)
@@ -122,7 +143,7 @@ const Register = () => {
                                 {" "}
                                 Photo URL{" "}
                             </label>
-                            <input name='photoURL' id="name" aria-labelledby="name" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder=" jpg,jpeg,png etc" required />
+                            <input name='photoURL' id="photoURL" aria-labelledby="photoURL" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2 " placeholder=" jpg,jpeg,png etc" required />
                         </div>
                         <div className="mt-6 w-full">
                             <label htmlFor="email" className="text-sm font-medium leading-none text-gray-800">

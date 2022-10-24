@@ -17,6 +17,8 @@
 14. Google and Github SignIn Setup
 15. Create User using email and password
 16. Sign In USer usint email and password
+17. Sign Out setup
+18. User profile update and set name and image on header
 
 
 
