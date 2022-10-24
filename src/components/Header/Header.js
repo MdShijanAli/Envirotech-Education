@@ -8,7 +8,7 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
-    const { user, logout } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
     return (
         <nav className="w-full bg-purple-400 shadow sticky top-0 z-50">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -84,7 +84,7 @@ const Header = () => {
                             </div>}
 
                             {
-                                user?.uid ? <Link onClick={logout}
+                                user?.uid ? <Link onClick={logOut}
                                     to='/'
                                     className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                 >
@@ -118,7 +118,7 @@ const Header = () => {
 
 
                     {
-                        user?.uid ? <Link onClick={logout}
+                        user?.uid ? <Link onClick={logOut}
                             to='/'
                             className="px-4  py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                         >
