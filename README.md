@@ -1,3 +1,20 @@
+# Assignment-10 
+
+# Working Steps:
+1. Create React App
+2. Connect Github Repository
+3. Make Some Needed Components
+4. `Install React Router Dom`
+5. Make Routes and Header
+6. `Install Tailwind CSS`
+7. Login Page and Register Page Design Complete using `tailwind css`
+8. create `firebase project`
+9. install and setup `firebase` on my project
+10. enable login methoeds from firebase 
+11. use `Context` for easily pass any information
+12. install `HeroIcon`
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
