@@ -37,6 +37,129 @@ const Home = () => {
             </div>
 
 
+
+            {/* courses section */}
+
+
+            <div className='min-h-screen bg-gradient-to-tr from-red-300 to-yellow-200'>
+                <h2 className='text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight pt-20'>Our Courses</h2>
+
+                <div className="flex justify-center items-center py-20">
+
+                    <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+                        <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+                            <h3 className="mb-3 text-xl font-bold text-indigo-600">Beginner Friendly</h3>
+                            <div className="relative">
+                                <img className="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                                <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">FREE</p>
+                            </div>
+                            <h1 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Javascript Bootcamp for Absolute Beginners</h1>
+                            <div className="my-4">
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                    <p>1:34:23 Minutes</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </span>
+                                    <p>3 Parts</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </span>
+                                    <p>Vanilla JS</p>
+                                </div>
+                                <button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">View Details</button>
+                            </div>
+                        </div>
+                        <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+                            <h3 className="mb-3 text-xl font-bold text-indigo-600">Intermediate</h3>
+                            <div className="relative">
+                                <img className="w-full rounded-xl" src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                                <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">$12</p>
+                                <p className="absolute top-0 right-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-tr-lg rounded-bl-lg">%20 Discount</p>
+                            </div>
+                            <h1 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Write a Gatsby plugin using Typescript</h1>
+                            <div className="my-4">
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                    <p>1:34:23 Minutes</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </span>
+                                    <p>3 Parts</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </span>
+                                    <p>TypeScript</p>
+                                </div>
+                                <button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">View Details</button>
+                            </div>
+                        </div>
+                        <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+                            <h3 className="mb-3 text-xl font-bold text-indigo-600">Beginner Friendly</h3>
+                            <div className="relative">
+                                <img className="w-full rounded-xl" src="https://images.unsplash.com/photo-1561835491-ed2567d96913?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                                <p className="absolute top-0 bg-yellow-300 text-gray-800 font-semibold py-1 px-3 rounded-br-lg rounded-tl-lg">$50</p>
+                            </div>
+                            <h1 className="mt-4 text-gray-800 text-2xl font-bold cursor-pointer">Advanced React Native for Sustainability</h1>
+                            <div className="my-4">
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </span>
+                                    <p>1:34:23 Minutes</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 4v12l-4-2-4 2V4M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                        </svg>
+                                    </span>
+                                    <p>3 Parts</p>
+                                </div>
+                                <div className="flex space-x-1 items-center">
+                                    <span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                                        </svg>
+                                    </span>
+                                    <p>Vanilla JS</p>
+                                </div>
+                                <button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">View Details</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
             {/* successful people section */}
 
             <section className="py-10 bg-white sm:py-16 lg:py-24">
@@ -186,6 +309,53 @@ const Home = () => {
                 </div>
             </section>
 
+
+
+            {/* newsletter */}
+
+            <section className="relative py-10 overflow-hidden bg-black sm:py-16 lg:py-24 xl:py-32">
+                <div className="absolute inset-0">
+                    <img className="object-cover w-full h-full md:object-left md:scale-150 md:origin-top-left" src="https://cdn.rareblocks.xyz/collection/celebration/images/cta/5/girl-working-on-laptop.jpg" alt="" />
+                </div>
+
+                <div className="absolute inset-0 hidden bg-gradient-to-r md:block from-black to-transparent"></div>
+
+                <div className="absolute inset-0 block bg-black/60 md:hidden"></div>
+
+                <div className="relative px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
+                    <div className="text-center md:w-2/3 lg:w-1/2 xl:w-1/3 md:text-left">
+                        <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">Get Notification for any Updates</h2>
+                        <p className="mt-4 text-base text-gray-200">If you want to get any notifications from us then please subscribe here. We will update you all information</p>
+
+                        <form action="#" method="POST" className="mt-8 lg:mt-12">
+                            <div className="flex flex-col items-center sm:flex-row sm:justify-center">
+                                <div className="flex-1 w-full min-w-0 px-4 sm:px-0">
+                                    <div className="relative text-gray-400 focus-within:text-gray-600">
+                                        <label for="email" className="sr-only"></label>
+                                        <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                            <svg className="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                                            </svg>
+                                        </div>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            id="email"
+                                            placeholder="Enter email address"
+                                            className="block w-full py-4 pl-10 pr-4 text-base text-black placeholder-gray-500 transition-all duration-200 border-gray-200 rounded-md sm:rounded-r-none caret-blue-600 focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <button type="submit" className="inline-flex items-center justify-center flex-shrink-0 w-auto px-4 py-4 mt-4 font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md sm:mt-0 sm:rounded-l-none sm:w-auto hover:bg-blue-700 focus:bg-blue-700">
+                                    Get instant access
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
 
 
