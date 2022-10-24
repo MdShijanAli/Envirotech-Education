@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import logo from '../../images/logo.webp';
+import logo from '../../images/logo.png';
 import { UserIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
@@ -10,12 +10,12 @@ const Header = () => {
     const [navbar, setNavbar] = useState(false);
     const { user, logout } = useContext(AuthContext);
     return (
-        <nav className="w-full bg-purple-500 shadow sticky top-0 z-50">
+        <nav className="w-full bg-purple-400 shadow sticky top-0 z-50">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to='/'>
-                            <img className='w-1/4' src={logo} alt="" />
+                            <img className='h-14' src={logo} alt="" />
                         </Link>
                         <div className="md:hidden">
                             <button
