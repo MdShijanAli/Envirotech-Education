@@ -19,7 +19,11 @@
 16. Sign In USer usint email and password
 17. Sign Out setup
 18. User profile update and set name and image on header
-
+19. Install `react hot toast`
+20. Design Home Page
+21. Design Contact Page
+22. Footer Added
+23.
 
 
 # Getting Started with Create React App

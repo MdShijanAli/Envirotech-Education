@@ -78,12 +78,15 @@ const Header = () => {
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
 
-
                             {
-                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                                user?.uid && <div>
+
+                                    {
+                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                                    }
+                                </div>
+
                             }
-
-
 
                             {
                                 user?.uid ? <Link onClick={logOut}
@@ -113,11 +116,15 @@ const Header = () => {
                 <div className="hidden md:flex">
 
 
-
                     {
-                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
-                    }
+                        user?.uid && <div>
 
+                            {
+                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                            }
+                        </div>
+
+                    }
 
 
 
