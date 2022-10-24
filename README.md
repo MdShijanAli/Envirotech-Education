@@ -13,6 +13,9 @@
 10. enable login methoeds from firebase 
 11. use `Context` for easily pass any information
 12. install `HeroIcon`
+13. create user authentication setup
+14. Google and Github SignIn Setup
+
 
 
 # Getting Started with Create React App
