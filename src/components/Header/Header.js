@@ -1,8 +1,10 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+
 import logo from '../../images/logo.webp';
-import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { UserIcon } from '@heroicons/react/24/solid'
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
+
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
