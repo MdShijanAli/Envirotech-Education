@@ -41,7 +41,7 @@
 27. Now Successfully show the courses
 28. make firebase hosting and setup and deploy my site
 29. make vercel live link using my server site files
-30. 
+30. Blog Page Complete
 
 
 # Getting Started with Create React App

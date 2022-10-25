@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import logo from '../../images/logo.png';
-import { UserIcon } from '@heroicons/react/24/solid'
+import { UserCircleIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
@@ -85,7 +85,7 @@ const Header = () => {
                                 user?.uid && <div>
 
                                     {
-                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
                                     }
                                 </div>
 
@@ -123,7 +123,7 @@ const Header = () => {
                         user?.uid && <div>
 
                             {
-                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserIcon className='w-6 h-6 text-white mr-2'></UserIcon>
+                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
                             }
                         </div>
 

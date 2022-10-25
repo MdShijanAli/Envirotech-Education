@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 import HomeBlog from '../HomeBlog/HomeBlog';
@@ -47,20 +46,20 @@ const Home = () => {
 
 
             {/* courses section */}
-            <div className='min-h-screen bg-gradient-to-tr from-red-300 to-yellow-200'>
+            <div className='min-h-screen py-10 bg-gradient-to-tr from-red-300 to-yellow-200'>
 
-                <h2 className='text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight pt-20'>Our Courses</h2>
+                <h2 className='text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight pt-10'>Our Courses</h2>
 
                 <div className="grid md:grid-cols-3 items-center w-4/5 gap-5 mx-auto py-20">
 
                     {
                         courses.map(course => <Course key={course.id} course={course}></Course>)
 
-
-
                     }
                 </div>
-
+                <div className='mx-auto text-center mb-10'>
+                    <Link to='/courses' className="inline-flex mx-auto items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">View All</Link>
+                </div>
             </div>
 
 
@@ -126,18 +125,8 @@ const Home = () => {
 
                     </div>
 
-                    <div className="flex items-center justify-center mt-8 space-x-3 lg:hidden">
-                        <button type="button" className="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
-                            </svg>
-                        </button>
-
-                        <button type="button" className="flex items-center justify-center text-gray-400 transition-all duration-200 bg-transparent border border-gray-300 rounded w-9 h-9 hover:bg-blue-600 hover:text-white focus:bg-blue-600 focus:text-white">
-                            <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                            </svg>
-                        </button>
+                    <div className='mx-auto text-center my-10'>
+                        <Link to='/blog' className="inline-flex mx-auto items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">View All</Link>
                     </div>
                 </div>
             </section>
