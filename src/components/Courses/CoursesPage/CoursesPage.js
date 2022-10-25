@@ -1,10 +1,10 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
-const Course = ({ course }) => {
+const CoursesPage = ({ course }) => {
     return (
         <div>
-            <div>
+            <div className="">
                 <div className="max-w-sm bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                     <h3 className="mb-3 text-xl font-bold text-indigo-600">{course?.level}</h3>
                     <div className="relative">
@@ -34,4 +34,4 @@ const Course = ({ course }) => {
     );
 };
 
-export default Course;
+export default CoursesPage;
