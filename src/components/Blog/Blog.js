@@ -1,17 +1,21 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const Blog = () => {
+    const blogs = useLoaderData();
+    console.log(blogs)
     return (
         <div>
-            <div class="flex flex-col items-center bg-white rounded-lg border shadow-md md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+            {
+                blogs.map(blog => <div className="card md:grid grid-cols-3 bg-base-100 shadow-xl border-gray-800 border-2 my-5  md:mx-32">
+                    <figure><img className='h-full  md:w-full' src={blog?.photo} alt="Album" /></figure>
+                    <div className="card-body col-span-2">
+                        <h2 className="card-title">{blog?.name}</h2>
+                        <p>{blog?.description}</p>
 
-                <img class="object-cover w-full h-96 rounded-t-lg md:h-auto md:w-48 md:rounded-none md:rounded-l-lg" src="/docs/images/blog/image-4.jpg" alt="" />
-                <div class="flex flex-col justify-between p-4 leading-normal">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-                </div>
-
-            </div>
+                    </div>
+                </div>)
+            }
 
         </div>
     );

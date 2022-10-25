@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
     return (
@@ -25,7 +26,8 @@ const Course = ({ course }) => {
                                 <FaStar className='h-5 w-5 text-amber-500'></FaStar>
                             </div>
                         </div>
-                        <button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">View Details</button>
+
+                        <Link to='/courses'><button className="mt-4 text-xl w-full text-white bg-indigo-600 py-2 rounded-xl shadow-lg">View Details</button></Link>
                     </div>
                 </div>
 
