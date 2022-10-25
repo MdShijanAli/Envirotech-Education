@@ -1,13 +1,16 @@
 # Assignment-10 
 
 # Assignment Link
-# Asssignment Repo Link: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-freelancershijan
+# Asssignment Repo Link: 
+[https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-freelancershijan](https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-freelancershijan)
 
 
-# Assignment Server Repo Link: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-freelancershijan
+# Assignment Server Repo Link: 
+[https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-freelancershijan](https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-freelancershijan)
 
 
-# Live Website Link: https://assignment-10-149ce.web.app/
+# Live Website Link: 
+[https://assignment-10-149ce.web.app/](https://assignment-10-149ce.web.app/)
 
 # Working Steps:
 1. Create React App
