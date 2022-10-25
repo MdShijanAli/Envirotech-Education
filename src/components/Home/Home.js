@@ -28,8 +28,8 @@ const Home = () => {
 
                                 <p className="mt-8 text-base text-black sm:text-xl">ENVIROTECH is one of the best online learning platform in the world. Here has 200+ Instructors from different COuntries who teach you in hte best.</p>
 
-                                <div className="mt-10 sm:flex sm:items-center sm:space-x-8">
-                                    <Link to='/courses' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600" role="button"> Start Learning </Link>
+                                <div className="mt-10 ">
+                                    <Link to='/courses' className="mr-5 inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-orange-500 hover:bg-orange-600 focus:bg-orange-600" role="button"> Start Learning </Link>
 
                                     <Link to='/blog' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">Learn More</Link>
                                 </div>

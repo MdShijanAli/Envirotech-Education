@@ -85,7 +85,7 @@ const Header = () => {
                                 user?.uid && <div>
 
                                     {
-                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
+                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
                                     }
                                 </div>
 
@@ -113,6 +113,12 @@ const Header = () => {
                                         </Link>
                                     </>
                             }
+                            <div className="form-control">
+                                <label className="label cursor-pointer">
+
+                                    <input type="checkbox" className="toggle toggle-secondary" checked />
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -123,7 +129,7 @@ const Header = () => {
                         user?.uid && <div>
 
                             {
-                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
+                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
                             }
                         </div>
 
@@ -155,6 +161,12 @@ const Header = () => {
 
                     }
 
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+
+                            <input type="checkbox" className="toggle toggle-secondary" checked />
+                        </label>
+                    </div>
                 </div>
             </div>
         </nav>

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
@@ -9,6 +10,8 @@ const Checkout = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+
 
     }
 
@@ -51,13 +54,7 @@ const Checkout = () => {
                         </label>
                         <input name='cardHolder' id="cardHolder" aria-labelledby="cardHolder" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Card Holder Name " required />
                     </div>
-                    <div className="mt-6 w-full">
-                        <label htmlFor="address" className="text-sm font-medium leading-none text-gray-800">
-                            {" "}
-                            Billing Address{" "}
-                        </label>
-                        <input name='address' id="address" aria-labelledby="address" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Newtown-7 no, Dinajpur Sadar, Dinajpur " required />
-                    </div>
+
                     <div className="mt-6 w-full">
                         <label htmlFor="cardDetails" className="text-sm font-medium leading-none text-gray-800">
                             {" "}
@@ -74,12 +71,45 @@ const Checkout = () => {
                         <input name='cvc' id="cvc" aria-labelledby="cvc" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="CVC " required />
                     </div>
 
+                    <div className="mt-6 w-full">
+                        <label htmlFor="address" className="text-sm font-medium leading-none text-gray-800">
+                            {" "}
+                            Billing Address{" "}
+                        </label>
+                        <input name='address' id="address" aria-labelledby="address" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Newtown-7 no, Dinajpur Sadar, Dinajpur " required />
+                    </div>
+                    <div className="mt-6 w-full">
+                        <label htmlFor="state" className="text-sm font-medium leading-none text-gray-800">
+                            {" "}
+                            State{" "}
+                        </label>
+                        <select type="text" name="billing-state" class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                            <option value="State">State</option>
+                            <option value="State">Dhaka</option>
+                            <option value="State">Chitaging</option>
+                            <option value="State">Rajsahi</option>
+                            <option value="State">Sylhet</option>
+                            <option value="State">Khulna</option>
+                            <option value="State">Rangpur</option>
+                            <option value="State">Mymansingh</option>
+                            <option value="State">Barishal</option>
+                            <option value="State">Noakhali</option>
+                        </select>
+                    </div>
 
-                    <div className="mt-8">
+                    <div className="mt-6 w-full">
+                        <label htmlFor="zip" className="text-sm font-medium leading-none text-gray-800">
+                            {" "}
+                            Zip Code{" "}
+                        </label>
+                        <input name='zip' id="zip" aria-labelledby="zip" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder=" 5200 " required />
+                    </div>
+
+                    <Link to='/thank-you' className="mt-8">
                         <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
                             Create my account
                         </button>
-                    </div>
+                    </Link>
                 </div>
 
             </form>
