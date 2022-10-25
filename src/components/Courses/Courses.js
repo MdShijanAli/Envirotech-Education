@@ -9,7 +9,7 @@ const Courses = () => {
     return (
         <div className='grid grid-cols-4 px-5  bg-gradient-to-tr from-red-300 to-yellow-200'>
             <div>
-                <SideBar></SideBar>
+                <SideBar courses={courses}></SideBar>
             </div>
             <div className='col-span-3'>
                 <div className='min-h-screen '>
