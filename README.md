@@ -1,5 +1,14 @@
 # Assignment-10 
 
+# Assignment Link
+# Asssignment Repo Link: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-freelancershijan
+
+
+# Assignment Server Repo Link: https://github.com/programming-hero-web-course1/b610-lerning-platform-server-side-freelancershijan
+
+
+# Live Website Link: https://assignment-10-149ce.web.app/
+
 # Working Steps:
 1. Create React App
 2. Connect Github Repository
@@ -28,6 +37,9 @@
 25. run api from index.js file
 26. call api in my routes file and recieve data use useLoaderData
 27. Now Successfully show the courses
+28. make firebase hosting and setup and deploy my site
+29. make vercel live link using my server site files
+30. 
 
 
 # Getting Started with Create React App
