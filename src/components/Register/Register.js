@@ -1,5 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.png'
 import img from '../../images/shijan.jpg'
@@ -7,9 +8,10 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
 const Register = () => {
+    const [error, setError] = useState('');
     const [showpass, setShowPass] = useState(false);
     const navigate = useNavigate();
-    const { createUser, providerLogin, updateUserProfile } = useContext(AuthContext);
+    const { createUser, verifyEmail, providerLogin, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -23,13 +25,17 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 const user = result.user;
+                setError('');
                 handleUpdateProfile(name, photoURL);
                 form.reset();
-                navigate('/');
+                handleEmailVerification();
+                toast.success('Registration Successfull !!! Please Check Your Email and Verified Email to Login')
                 console.log('New Created User', user);
             })
             .catch(error => {
                 console.error('create user account error', error)
+                setError(error.message);
+
             })
 
 
@@ -47,6 +53,18 @@ const Register = () => {
             .then(() => {
 
                 console.log('Update USer Phofile')
+            })
+            .catch(error => {
+                console.error('create user account error', error)
+            })
+
+    }
+
+    const handleEmailVerification = () => {
+        verifyEmail()
+            .then(() => {
+
+                console.log('Email Verified')
             })
             .catch(error => {
                 console.error('create user account error', error)
@@ -206,6 +224,10 @@ const Register = () => {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <div className='text-red-600'>
+                            {error}
                         </div>
                         <div className="mt-8">
                             <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">

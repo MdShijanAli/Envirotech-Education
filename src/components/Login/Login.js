@@ -1,13 +1,18 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 const Login = () => {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const [error, setError] = useState('');
     const { providerLogin, signIn } = useContext(AuthContext)
 
+    const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -20,10 +25,19 @@ const Login = () => {
         signIn(email, password)
             .then(result => {
                 const user = result.user;
+                form.reset();
+                setError('');
+                if (user.emailVerified) {
+                    navigate(from, { replace: true });
+                }
+                else {
+                    toast.error('Your EMail is Not Verified. PLease Verify your email address first!!')
+                }
                 console.log('Login User from form', user)
             })
             .catch(error => {
                 console.error('SIgn In from From User', error)
+                setError(error.message);
             })
 
     }
@@ -32,10 +46,13 @@ const Login = () => {
         providerLogin(googleProvider)
             .then(result => {
                 const user = result.user;
+
+                navigate('/');
                 console.log('New User From Google', user)
             })
             .catch(error => {
-                console.error('Google User SIgn In error', error)
+                console.error('Google User SIgn In error', error);
+
             })
     }
     const githubProvider = new GithubAuthProvider();
@@ -43,10 +60,12 @@ const Login = () => {
         providerLogin(githubProvider)
             .then(result => {
                 const user = result.user;
+                navigate('/');
                 console.log('New User From Github', user)
             })
             .catch(error => {
-                console.error('Github User SIgn In error', error)
+                console.error('Github User SIgn In error', error);
+
             })
     }
 
@@ -81,7 +100,7 @@ const Login = () => {
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="password" className="text-base font-medium text-gray-900"> Password </label>
 
-                                        <a href="#" title="" className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </a>
+                                        <Link className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
                                     </div>
                                     <div className="mt-2.5">
                                         <input
@@ -93,6 +112,10 @@ const Login = () => {
                                             className="block w-full p-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600"
                                         />
                                     </div>
+                                </div>
+
+                                <div className='text-red-600'>
+                                    {error}
                                 </div>
 
                                 <div>

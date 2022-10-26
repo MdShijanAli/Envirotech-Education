@@ -11,6 +11,7 @@ import Register from "../components/Register/Register";
 import SingleCourse from "../components/SingleCourse/SingleCourse";
 import ThankYouPage from "../components/ThankYouPage/ThankYouPage";
 import Main from "../Utilities/Main";
+import PriveteRoute from "./PrivateRoute/PriveteRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -61,11 +62,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/thank-you',
-                element: <ThankYouPage></ThankYouPage>
+                element: <PriveteRoute><ThankYouPage></ThankYouPage></PriveteRoute>
             },
             {
                 path: '/checkout',
-                element: <Checkout></Checkout>
+                element: <PriveteRoute><Checkout></Checkout></PriveteRoute>
             }
         ]
     }
