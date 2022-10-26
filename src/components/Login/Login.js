@@ -5,12 +5,15 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
 
+
+
+
 const Login = () => {
 
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('');
-    const { providerLogin, signIn } = useContext(AuthContext)
+    const { providerLogin, resetPassword, signIn } = useContext(AuthContext)
 
     const from = location.state?.from?.pathname || '/';
 
@@ -27,6 +30,7 @@ const Login = () => {
                 const user = result.user;
                 form.reset();
                 setError('');
+
                 if (user.emailVerified) {
                     navigate(from, { replace: true });
                 }
@@ -68,6 +72,8 @@ const Login = () => {
 
             })
     }
+
+
 
     return (
 

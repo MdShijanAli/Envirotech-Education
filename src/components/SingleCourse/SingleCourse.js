@@ -24,13 +24,14 @@ const SingleCourse = () => {
 
                         <div className="card-body">
                             <h2 className="text-2xl card-title mb-10">{course?.name}</h2>
+                            <p className='text-xl my-1 font-bold'>Author: {course.author}</p>
                             <p className='text-xl my-1'>Course Level: {course.level}</p>
                             <p className='text-xl my-1'>Duration: {course.duration}</p>
                             <p className='text-xl my-1'>Total Enroll: {course.students}</p>
                             <p className='text-xl my-1'>Price: ${course.price}</p>
 
 
-                            <Link to='/' className="card-actions justify-start mt-10">
+                            <Link to='/pdf' className="card-actions justify-start mt-10">
 
                                 <button className="btn btn-primary w-full"><ArrowDownTrayIcon className='h-6 w-6 mr-2'></ArrowDownTrayIcon>  Download Outline</button>
                             </Link>

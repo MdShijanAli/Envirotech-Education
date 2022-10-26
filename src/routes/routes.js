@@ -7,6 +7,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import Pdf from "../components/Pdf/Pdf";
 import Profile from "../components/Profile/Profile";
 import Register from "../components/Register/Register";
 import SingleCourse from "../components/SingleCourse/SingleCourse";
@@ -55,6 +56,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/faq',
+                loader: () => fetch('https://assignment-10-server-beta.vercel.app/blog'),
                 element: <FAQ></FAQ>
             },
             {
@@ -77,6 +79,10 @@ export const routes = createBrowserRouter([
             {
                 path: 'update-profile',
                 element: <PriveteRoute><UpdateProfile></UpdateProfile></PriveteRoute>
+            },
+            {
+                path: '/pdf',
+                element: <Pdf></Pdf>
             }
         ]
     }
