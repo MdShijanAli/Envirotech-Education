@@ -29,16 +29,16 @@ const SingleCourse = () => {
                             <p className='text-xl my-1'>Total Enroll: {course.students}</p>
                             <p className='text-xl my-1'>Price: ${course.price}</p>
 
-                            <div className='flex justify-between'>
-                                <Link to='/' className="card-actions justify-start mt-10">
 
-                                    <button className="btn btn-primary"><ArrowDownTrayIcon className='h-6 w-6 mr-2'></ArrowDownTrayIcon>  Download Outline</button>
-                                </Link>
+                            <Link to='/' className="card-actions justify-start mt-10">
 
-                                <Link to='/checkout' className="card-actions  mt-10">
-                                    <button className="btn btn-primary">Enroll Now</button>
-                                </Link>
-                            </div>
+                                <button className="btn btn-primary w-full"><ArrowDownTrayIcon className='h-6 w-6 mr-2'></ArrowDownTrayIcon>  Download Outline</button>
+                            </Link>
+
+                            <Link to='/checkout' className="card-actions">
+                                <button className="btn btn-primary w-full">Get premium access</button>
+                            </Link>
+
                         </div>
                     </div>
                 </div>
