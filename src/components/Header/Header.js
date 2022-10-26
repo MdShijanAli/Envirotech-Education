@@ -80,16 +80,17 @@ const Header = () => {
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
+                            <Link to='/profile'>
+                                {
+                                    user?.uid && <div>
 
-                            {
-                                user?.uid && <div>
+                                        {
+                                            user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
+                                        }
+                                    </div>
 
-                                    {
-                                        user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
-                                    }
-                                </div>
-
-                            }
+                                }
+                            </Link>
 
                             {
                                 user?.uid ? <Link onClick={logOut}
@@ -125,15 +126,17 @@ const Header = () => {
                 <div className="hidden md:flex">
 
 
-                    {
-                        user?.uid && <div>
+                    <Link to='/profile'>
+                        {
+                            user?.uid && <div>
 
-                            {
-                                user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
-                            }
-                        </div>
+                                {
+                                    user?.photoURL ? <img className='w-12 h-12 rounded-full mr-2' alt='profilePhoto' src={user?.photoURL} title={user?.displayName}></img> : <UserCircleIcon title={user?.displayName} className='w-12 h-12 text-white mr-2'></UserCircleIcon>
+                                }
+                            </div>
 
-                    }
+                        }
+                    </Link>
 
 
 

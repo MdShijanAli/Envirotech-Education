@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, updateProfile, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, sendEmailVerification } from "firebase/auth";
 import app from '../../../firebase/firebase.config';
+import { current } from 'daisyui/src/colors';
 
 export const AuthContext = createContext();
 
@@ -46,10 +47,16 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log('inside changed', currentUser);
-            setUser(currentUser)
+            if (currentUser === null || currentUser.emailVerified) {
+
+                setUser(currentUser)
+            }
+
             setLoading(false);
         });
-        return unsubscribe;
+        return () => {
+            unsubscribe();
+        }
     }, [])
 
 

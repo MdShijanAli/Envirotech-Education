@@ -83,7 +83,7 @@ const Checkout = () => {
                             {" "}
                             State{" "}
                         </label>
-                        <select type="text" name="billing-state" class="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
+                        <select type="text" name="billing-state" className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
                             <option value="State">State</option>
                             <option value="State">Dhaka</option>
                             <option value="State">Chitaging</option>

@@ -15,7 +15,7 @@ const HomeBlog = () => {
     return (
         <div className='grid md:grid-cols-3 gap-5 mx-auto mt-8 lg:mt-16'>
             {
-                blogss.map(blg => <div className="overflow-hidden bg-white rounded shadow">
+                blogss.map(blg => <div key={blg.id} className="overflow-hidden bg-white rounded shadow">
                     <div className="p-5">
                         <div className="relative">
                             <Link to='/blog' className="block aspect-w-4 aspect-h-3">

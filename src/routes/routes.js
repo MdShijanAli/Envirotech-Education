@@ -7,9 +7,11 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import FAQ from "../components/FAQ/FAQ";
 import Home from "../components/Home/Home";
 import Login from "../components/Login/Login";
+import Profile from "../components/Profile/Profile";
 import Register from "../components/Register/Register";
 import SingleCourse from "../components/SingleCourse/SingleCourse";
 import ThankYouPage from "../components/ThankYouPage/ThankYouPage";
+import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import Main from "../Utilities/Main";
 import PriveteRoute from "./PrivateRoute/PriveteRoute";
 
@@ -67,6 +69,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/checkout',
                 element: <PriveteRoute><Checkout></Checkout></PriveteRoute>
+            },
+            {
+                path: '/profile',
+                element: <PriveteRoute><Profile></Profile></PriveteRoute>
+            },
+            {
+                path: 'update-profile',
+                element: <PriveteRoute><UpdateProfile></UpdateProfile></PriveteRoute>
             }
         ]
     }
