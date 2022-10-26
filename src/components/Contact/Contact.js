@@ -3,16 +3,14 @@ import toast from 'react-hot-toast';
 
 const Contact = () => {
 
-    const handleSubmit = event => {
+
+    const handleSubmit = (event) => {
         event.preventDefault();
-
-
+        const form = event.target;
+        toast.success('Thanks your for your message!!. We will reply in your email shortly!!!')
+        form.reset()
     }
-    const submitHandle = () => {
 
-        toast.success('We Have Recieved Your Message. We will reply on your email shortly!!')
-
-    }
 
     return (
         <div>
@@ -28,38 +26,38 @@ const Contact = () => {
                                 <div className="p-6 sm:p-10">
                                     <h3 className="text-2xl font-semibold text-black">Send us a message</h3>
 
-                                    <form onClick={handleSubmit} method="POST" className="mt-8">
+                                    <form onSubmit={handleSubmit} className="mt-8">
                                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-5 gap-y-4">
                                             <div>
-                                                <label for="" className="text-base font-medium text-gray-900"> Your name </label>
+                                                <label htmlFor="name" className="text-base font-medium text-gray-900"> Your name </label>
                                                 <div className="mt-2.5 relative">
-                                                    <input type="text" name="" id="" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    <input type="text" name="name" id="name" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <label for="" className="text-base font-medium text-gray-900"> Your email </label>
+                                                <label htmlFor="email" className="text-base font-medium text-gray-900"> Your email </label>
                                                 <div className="mt-2.5 relative">
-                                                    <input type="email" name="" id="" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    <input type="email" name="email" id="email" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <label for="" className="text-base font-medium text-gray-900"> Phone number </label>
+                                                <label htmlFor="phone" className="text-base font-medium text-gray-900"> Phone number </label>
                                                 <div className="mt-2.5 relative">
-                                                    <input type="tel" name="" id="" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    <input type="tel" name="phone" id="phone" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                 </div>
                                             </div>
 
                                             <div>
-                                                <label for="" className="text-base font-medium text-gray-900"> Company name </label>
+                                                <label htmlFor="company" className="text-base font-medium text-gray-900"> Company name </label>
                                                 <div className="mt-2.5 relative">
-                                                    <input type="text" name="" id="" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
+                                                    <input type="text" name="company" id="company" placeholder="" className="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 border border-gray-200 rounded-md bg-gray-50 focus:outline-none focus:border-blue-600 focus:bg-white caret-blue-600" required />
                                                 </div>
                                             </div>
 
                                             <div className="sm:col-span-2">
-                                                <label for="" className="text-base font-medium text-gray-900"> Message </label>
+                                                <label htmlFor="" className="text-base font-medium text-gray-900"> Message </label>
                                                 <div className="mt-2.5 relative">
                                                     <textarea
                                                         name=""
@@ -73,7 +71,7 @@ const Contact = () => {
                                             </div>
 
                                             <div className="sm:col-span-2">
-                                                <button onClick={submitHandle} type="submit" className="inline-flex items-center justify-center w-full px-4 py-4 mt-2 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700">
+                                                <button type="submit" className="inline-flex items-center justify-center w-full px-4 py-4 mt-2 text-base font-semibold text-white transition-all duration-200 bg-blue-600 border border-transparent rounded-md focus:outline-none hover:bg-blue-700 focus:bg-blue-700">
                                                     Send
                                                 </button>
                                             </div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLoaderData } from 'react-router-dom';
 import Course from '../Course/Course';
 import HomeBlog from '../HomeBlog/HomeBlog';
@@ -7,7 +8,12 @@ const Home = () => {
     const courses = useLoaderData();
     console.log(courses);
 
-
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const form = event.target
+        toast.success('Thanks for your Subscription!!!');
+        form.reset()
+    }
 
     return (
         <div>
@@ -149,7 +155,7 @@ const Home = () => {
                         <h2 className="text-3xl font-bold leading-tight text-white sm:text-4xl lg:text-5xl">Get Notification for any Updates</h2>
                         <p className="mt-4 text-base text-gray-200">If you want to get any notifications from us then please subscribe here. We will update you all information</p>
 
-                        <form action="#" method="POST" className="mt-8 lg:mt-12">
+                        <form onSubmit={handleSubmit} method="POST" className="mt-8 lg:mt-12">
                             <div className="flex flex-col items-center sm:flex-row sm:justify-center">
                                 <div className="flex-1 w-full min-w-0 px-4 sm:px-0">
                                     <div className="relative text-gray-400 focus-within:text-gray-600">
