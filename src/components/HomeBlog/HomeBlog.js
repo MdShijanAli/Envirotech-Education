@@ -13,7 +13,7 @@ const HomeBlog = () => {
 
     console.log(blogss);
     return (
-        <div className='grid md:grid-cols-3 gap-5 mx-auto mt-8 lg:mt-16'>
+        <div className='mx-5 grid md:grid-cols-3 gap-5 md:mx-auto mt-8 lg:mt-16'>
             {
                 blogss.map(blg => <div key={blg.id} className="overflow-hidden bg-white rounded shadow">
                     <div className="p-5">

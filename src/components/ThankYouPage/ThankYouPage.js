@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const ThankYouPage = () => {
     return (
-        <div className="flex items-center justify-center h-screen">
+        <div className="flex items-center justify-center h-screen mx-5">
             <div className="p-1 rounded shadow-lg bg-gradient-to-r from-purple-500 via-green-500 to-blue-500">
                 <div className="flex flex-col items-center p-4 space-y-2 bg-white">
                     <svg xmlns="http://www.w3.org/2000/svg" className="text-green-600 w-28 h-28" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">

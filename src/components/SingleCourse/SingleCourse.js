@@ -8,7 +8,7 @@ const SingleCourse = () => {
     console.log(course);
     return (
         <div className='bg-gradient-to-r from-purple-500 to-pink-500 '>
-            <div className='grid md:grid-cols-3 md:px-20 py-20 gap-5'>
+            <div className='md:grid md:grid-cols-3 md:px-20 mx-5 py-20 gap-5 '>
                 <div className="card w-full glass col-span-2">
                     <figure><img className='my-5' src={course?.photo} alt="car!" /></figure>
                     <div className="card-body">

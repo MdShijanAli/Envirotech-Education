@@ -22,6 +22,12 @@ const Register = () => {
         const password = form.password.value;
         const photoURL = form.photoURL.value;
 
+        if (!/(?=.*[!@#$%^&*])/.test(password)) {
+            setError('Please add a special carecter')
+            return;
+
+        }
+
         createUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -260,7 +266,7 @@ const Register = () => {
                             </div>
                             <div className="ml-2">
                                 <p className="text-sm font-medium leading-none text-gray-800">Md Shijan Ali</p>
-                                <p className="text-sm font-medium leading-none text-gray-600 mt-1 cursor-pointer hover:underline">See profile</p>
+                                <a href="https://www.facebook.com/mdshijanali135/" target='_blank'><p className="text-sm font-medium leading-none text-gray-600 mt-1 cursor-pointer hover:underline">See profile</p></a>
                             </div>
                         </div>
                     </div>

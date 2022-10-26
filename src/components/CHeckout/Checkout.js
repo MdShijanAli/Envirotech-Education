@@ -1,15 +1,22 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
 
-const Checkout = () => {
+const Checkout = ({ course }) => {
 
+    const navigate = useNavigate();
+
+    console.log('course', course);
     const { user } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        navigate('/thank-you')
+
 
 
 
@@ -19,17 +26,18 @@ const Checkout = () => {
 
 
 
-        <div className="bg-indigo-50 ">
-            <form onSubmit={handleSubmit} className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
+        <div className="bg-indigo-50  md:px-20 py-20 gap-5 bg-gradient-to-r from-purple-500 to-pink-500 rounded">
 
-                <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
+            <form onSubmit={handleSubmit} className=" md:px-10  px-4  2xl:mx-auto 2xl:container md:flex items-center justify-center">
+
+                <div className=" md:w-2/3 px-10 py-10">
 
 
 
 
                     <div className="w-full flex items-center justify-between py-5">
                         <hr className="w-full bg-gray-400" />
-                        <p className="text-base font-medium leading-4 px-2.5 text-gray-500">Checkout</p>
+                        <p className="text-xl font-medium leading-4 px-2.5 text-black">Checkout</p>
                         <hr className="w-full bg-gray-400" />
                     </div>
                     <div className="mt-6 w-full">
@@ -45,7 +53,7 @@ const Checkout = () => {
                             {" "}
                             Email{" "}
                         </label>
-                        <input defaultValue={user?.email} readOnly name='email' id="email" aria-labelledby="email" type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="e.g: john@gmail.com " required />
+                        <input defaultValue={user?.email} name='email' id="email" aria-labelledby="email" type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="e.g: john@gmail.com " required />
                     </div>
                     <div className="mt-6 w-full">
                         <label htmlFor="cardHolder" className="text-sm font-medium leading-none text-gray-800">
@@ -62,13 +70,15 @@ const Checkout = () => {
                         </label>
                         <input name='cardDetails' id="cardDetails" aria-labelledby="cardDetails" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="XXXX-XXXX-XXXX-XXXX " required />
                     </div>
-                    <div className=" w-full">
+                    <div className='flex gap-5'>
+                        <div className="w-1/2">
 
-                        <input name='mm' id="mm" aria-labelledby="mm" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="MM/YY " required />
-                    </div>
-                    <div className=" w-full">
+                            <input name='mm' id="mm" aria-labelledby="mm" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="MM/YY " required />
+                        </div>
+                        <div className=" w-1/2 ">
 
-                        <input name='cvc' id="cvc" aria-labelledby="cvc" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="CVC " required />
+                            <input name='cvc' id="cvc" aria-labelledby="cvc" type="number" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="CVC " required />
+                        </div>
                     </div>
 
                     <div className="mt-6 w-full">
@@ -78,41 +88,46 @@ const Checkout = () => {
                         </label>
                         <input name='address' id="address" aria-labelledby="address" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="Newtown-7 no, Dinajpur Sadar, Dinajpur " required />
                     </div>
-                    <div className="mt-6 w-full">
-                        <label htmlFor="state" className="text-sm font-medium leading-none text-gray-800">
-                            {" "}
-                            State{" "}
-                        </label>
-                        <select type="text" name="billing-state" className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500">
-                            <option value="State">State</option>
-                            <option value="State">Dhaka</option>
-                            <option value="State">Chitaging</option>
-                            <option value="State">Rajsahi</option>
-                            <option value="State">Sylhet</option>
-                            <option value="State">Khulna</option>
-                            <option value="State">Rangpur</option>
-                            <option value="State">Mymansingh</option>
-                            <option value="State">Barishal</option>
-                            <option value="State">Noakhali</option>
-                        </select>
+                    <div className='flex gap-5 items-center'>
+                        <div className="mt-6 w-1/2">
+                            <label htmlFor="state" className="text-sm font-medium leading-none text-gray-800">
+                                {" "}
+                                State{" "}
+                            </label>
+                            <select type="text" name="billing-state" className="w-full rounded-md border border-gray-200 px-4 py-3 text-sm shadow-sm outline-none focus:z-10 focus:border-blue-500 focus:ring-blue-500" required>
+                                <option value="State">State</option>
+                                <option value="State">Dhaka</option>
+                                <option value="State">Chitaging</option>
+                                <option value="State">Rajsahi</option>
+                                <option value="State">Sylhet</option>
+                                <option value="State">Khulna</option>
+                                <option value="State">Rangpur</option>
+                                <option value="State">Mymansingh</option>
+                                <option value="State">Barishal</option>
+                                <option value="State">Noakhali</option>
+                            </select>
+                        </div>
+
+                        <div className="mt-6 w-1/2">
+                            <label htmlFor="zip" className="text-sm font-medium leading-none text-gray-800">
+                                {" "}
+                                Zip Code{" "}
+                            </label>
+                            <input name='zip' id="zip" aria-labelledby="zip" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder=" 5200 " required />
+                        </div>
                     </div>
 
-                    <div className="mt-6 w-full">
-                        <label htmlFor="zip" className="text-sm font-medium leading-none text-gray-800">
-                            {" "}
-                            Zip Code{" "}
-                        </label>
-                        <input name='zip' id="zip" aria-labelledby="zip" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder=" 5200 " required />
-                    </div>
 
-                    <Link to='/thank-you' className="">
-                        <button role="button" className="mt-8 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
-                            Order Now
-                        </button>
-                    </Link>
+                    <button role="button" className="mt-8 focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+                        Order Now
+                    </button>
+
                 </div>
 
             </form>
+
+
+
         </div>
 
 

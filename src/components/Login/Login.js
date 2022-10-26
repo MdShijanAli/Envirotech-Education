@@ -13,7 +13,7 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('');
-    const { providerLogin, resetPassword, signIn } = useContext(AuthContext)
+    const { providerLogin, signIn } = useContext(AuthContext)
 
     const from = location.state?.from?.pathname || '/';
 
@@ -106,7 +106,7 @@ const Login = () => {
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="password" className="text-base font-medium text-gray-900"> Password </label>
 
-                                        <Link className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
+                                        <Link to='/reset-password' className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
                                     </div>
                                     <div className="mt-2.5">
                                         <input
@@ -164,13 +164,7 @@ const Login = () => {
                             <h3 className="text-2xl font-bold text-center text-black">Make Your Own Life</h3>
                             <p className="leading-relaxed text-center text-gray-500 mt-2.5">If you want to be a successful man then you need to more hardwork.</p>
 
-                            <div className="flex items-center justify-center mt-10 space-x-3">
-                                <div className="bg-orange-500 rounded-full w-20 h-1.5"></div>
 
-                                <div className="bg-gray-200 rounded-full w-12 h-1.5"></div>
-
-                                <div className="bg-gray-200 rounded-full w-12 h-1.5"></div>
-                            </div>
                         </div>
                     </div>
                 </div>

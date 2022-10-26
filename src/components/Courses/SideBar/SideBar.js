@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const SideBar = ({ courses }) => {
     return (
-        <div className='md:mt-20 rounded-xl bg-white p-5 mx-10 sticky top-28'>
+        <div className='rounded-xl bg-white p-5 mx-10 sticky top-28'>
             <h1 className='text-3xl font-semibold mb-10 text-indigo-900'>Total {courses.length} Courses</h1>
 
             {

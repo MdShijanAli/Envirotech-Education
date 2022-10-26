@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import CheckOutSide from "../CheckOutSIde/CheckOutSide";
 import Blog from "../components/Blog/Blog";
 import Checkout from "../components/CHeckout/Checkout";
 import Contact from "../components/Contact/Contact";
@@ -10,6 +11,7 @@ import Login from "../components/Login/Login";
 import Pdf from "../components/Pdf/Pdf";
 import Profile from "../components/Profile/Profile";
 import Register from "../components/Register/Register";
+import ResetPass from "../components/ResetPass/ResetPass";
 import SingleCourse from "../components/SingleCourse/SingleCourse";
 import ThankYouPage from "../components/ThankYouPage/ThankYouPage";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
@@ -64,6 +66,7 @@ export const routes = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://assignment-10-server-beta.vercel.app/courses/${params.id}`),
                 element: <SingleCourse></SingleCourse>
             },
+
             {
                 path: '/thank-you',
                 element: <PriveteRoute><ThankYouPage></ThankYouPage></PriveteRoute>
@@ -83,6 +86,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/pdf',
                 element: <Pdf></Pdf>
+            },
+            {
+                path: '/reset-password',
+                element: <ResetPass></ResetPass>
             }
         ]
     }

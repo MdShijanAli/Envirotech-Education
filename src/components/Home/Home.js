@@ -56,7 +56,7 @@ const Home = () => {
 
                 <h2 className='text-center text-3xl font-bold leading-tight text-black sm:text-4xl lg:text-5xl lg:leading-tight pt-10'>Our Courses</h2>
 
-                <div className="grid md:grid-cols-3 items-center w-4/5 gap-5 mx-auto py-20">
+                <div className="grid md:grid-cols-3 items-center md:w-4/5 gap-5 mx-auto py-20">
 
                     {
                         courses.map(course => <Course key={course.id} course={course}></Course>)

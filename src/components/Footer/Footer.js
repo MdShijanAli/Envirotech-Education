@@ -29,6 +29,10 @@ const Footer = () => {
                                 </li>
 
                                 <li>
+                                    <Link to='/FAQ' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> FAQ </Link>
+                                </li>
+
+                                <li>
                                     <Link to='/contact' className="text-sm text-white transition-all duration-200 hover:text-opacity-80 focus:text-opacity-80"> Contact </Link>
                                 </li>
 
