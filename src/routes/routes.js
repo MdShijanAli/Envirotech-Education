@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import CheckOutSide from "../CheckOutSIde/CheckOutSide";
 import Blog from "../components/Blog/Blog";
 import Checkout from "../components/CHeckout/Checkout";
 import Contact from "../components/Contact/Contact";
@@ -14,7 +13,6 @@ import Register from "../components/Register/Register";
 import ResetPass from "../components/ResetPass/ResetPass";
 import SingleCourse from "../components/SingleCourse/SingleCourse";
 import ThankYouPage from "../components/ThankYouPage/ThankYouPage";
-import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import Main from "../Utilities/Main";
 import PriveteRoute from "./PrivateRoute/PriveteRoute";
 
@@ -79,10 +77,7 @@ export const routes = createBrowserRouter([
                 path: '/profile',
                 element: <PriveteRoute><Profile></Profile></PriveteRoute>
             },
-            {
-                path: 'update-profile',
-                element: <PriveteRoute><UpdateProfile></UpdateProfile></PriveteRoute>
-            },
+
             {
                 path: '/pdf',
                 element: <Pdf></Pdf>

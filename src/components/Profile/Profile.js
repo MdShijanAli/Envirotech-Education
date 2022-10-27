@@ -7,7 +7,7 @@ const Profile = () => {
     return (
 
 
-        <div className="bg-purple-400 shadow-xl my-12 pb-6 w-full justify-center items-center overflow-hidden md:max-w-sm rounded-lg mx-auto">
+        <div className="bg-purple-400 shadow-xl my-12 pb-6 mx-5 justify-center items-center overflow-hidden md:w-1/2 rounded-lg md:mx-auto">
             <div className="relative h-40">
                 <img className="absolute h-full w-full object-cover" src="https://images.unsplash.com/photo-1448932133140-b4045783ed9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=400&q=80" />
             </div>
@@ -26,7 +26,7 @@ const Profile = () => {
             </div>
 
             <div className='text-center my-10'>
-                <Link to='/update-profile' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">Update Profile</Link>
+                <Link to='/' className="inline-flex items-center justify-center px-10 py-4 text-base font-semibold text-white transition-all duration-200 bg-cyan-600 hover:bg-cyan-800 focus:bg-orange-600" role="button">Go Home</Link>
 
             </div>
         </div>

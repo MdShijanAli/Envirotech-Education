@@ -81,6 +81,10 @@ const Login = () => {
 
 
     const handlePassReset = () => {
+        if (!userEmail) {
+            toast.error('Please Enter Your EMail Address');
+            return;
+        }
         passResetEmail(userEmail)
             .then(() => {
                 toast.success('Password Reset EMail Send. Check your email')
