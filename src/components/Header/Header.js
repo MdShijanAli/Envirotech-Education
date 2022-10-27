@@ -129,7 +129,7 @@ const Header = () => {
                             <div className="form-control">
                                 <label className="label cursor-pointer">
 
-                                    <input type="checkbox" className="toggle toggle-secondary" checked />
+                                    <input type="checkbox" className="toggle toggle-secondary" />
                                 </label>
                             </div>
                         </div>
@@ -179,7 +179,7 @@ const Header = () => {
                     <div className="form-control">
                         <label className="label cursor-pointer">
 
-                            <input type="checkbox" className="toggle toggle-secondary" checked />
+                            <input type="checkbox" className="toggle toggle-secondary" />
                         </label>
                     </div>
                 </div>

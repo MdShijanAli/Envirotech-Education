@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 
 const Login = () => {
 
+
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('');
@@ -75,6 +76,8 @@ const Login = () => {
 
 
 
+
+
     return (
 
 
@@ -92,6 +95,7 @@ const Login = () => {
                                     <label htmlFor="email" className="text-base font-medium text-gray-900"> Email address </label>
                                     <div className="mt-2.5">
                                         <input
+
                                             required
                                             type="email"
                                             name="email"

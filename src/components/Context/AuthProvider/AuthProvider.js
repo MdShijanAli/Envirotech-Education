@@ -75,6 +75,7 @@ const AuthProvider = ({ children }) => {
         loading,
         verifyEmail
 
+
     }
     return (
         <div>
