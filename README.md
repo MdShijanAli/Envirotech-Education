@@ -45,6 +45,14 @@
 28. make firebase hosting and setup and deploy my site
 29. make vercel live link using my server site files
 30. Blog Page Complete
+31. Single course page setup
+32. Checkout form setup
+33. Thank you page done
+34. pdf download setup
+35. Responsive Setup
+36. Deploy server data onn vercel
+37. Deploy Live side on firebase
+
 
 
 # Getting Started with Create React App

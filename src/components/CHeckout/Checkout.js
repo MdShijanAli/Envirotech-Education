@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
-import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
 
-const Checkout = ({ course }) => {
+const Checkout = () => {
 
     const navigate = useNavigate();
 
-    console.log('course', course);
+
     const { user } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
