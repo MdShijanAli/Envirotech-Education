@@ -2,7 +2,7 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 import React from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import jsPDF from 'jspdf';
-import logo from '../../images/logo.png'
+
 
 
 const SingleCourse = () => {
@@ -13,8 +13,6 @@ const SingleCourse = () => {
     const pdfGenerate = () => {
         var doc = new jsPDF('landscape', 'px', 'a4', 'false');
         doc.addImage(`${course?.photo}`, 'PNG', 165, 20, 300, 200);
-        // doc.addImage(`${course?.photo}`, 'PNG', 250, 20, 100, 50);
-        // doc.addPage()
 
         doc.setFont('Helvertica', 'bold')
         doc.text(170, 270, 'Course Name')

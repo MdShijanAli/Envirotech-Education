@@ -4,17 +4,19 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast';
 
 
 
 
 const Login = () => {
 
+    const [userEmail, setUserEmail] = useState('');
 
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('');
-    const { providerLogin, signIn } = useContext(AuthContext)
+    const { passResetEmail, providerLogin, signIn } = useContext(AuthContext)
 
     const from = location.state?.from?.pathname || '/';
 
@@ -31,13 +33,8 @@ const Login = () => {
                 const user = result.user;
                 form.reset();
                 setError('');
+                navigate(from, { replace: true });
 
-                if (user.emailVerified) {
-                    navigate(from, { replace: true });
-                }
-                else {
-                    toast.error('Your EMail is Not Verified. PLease Verify your email address first!!')
-                }
                 console.log('Login User from form', user)
             })
             .catch(error => {
@@ -52,7 +49,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
 
-                navigate('/');
+                navigate(from, { replace: true });
                 console.log('New User From Google', user)
             })
             .catch(error => {
@@ -65,7 +62,7 @@ const Login = () => {
         providerLogin(githubProvider)
             .then(result => {
                 const user = result.user;
-                navigate('/');
+                navigate(from, { replace: true });
                 console.log('New User From Github', user)
             })
             .catch(error => {
@@ -75,6 +72,23 @@ const Login = () => {
     }
 
 
+    const handleEmailBlur = (event) => {
+        const email = event.target.value;
+        setUserEmail(email);
+        console.log(email)
+    }
+
+
+
+    const handlePassReset = () => {
+        passResetEmail(userEmail)
+            .then(() => {
+                toast.success('Password Reset EMail Send. Check your email')
+            })
+            .catch(error => {
+                console.error('password reset error', error.message)
+            })
+    }
 
 
 
@@ -95,7 +109,7 @@ const Login = () => {
                                     <label htmlFor="email" className="text-base font-medium text-gray-900"> Email address </label>
                                     <div className="mt-2.5">
                                         <input
-
+                                            onBlur={handleEmailBlur}
                                             required
                                             type="email"
                                             name="email"
@@ -110,7 +124,7 @@ const Login = () => {
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="password" className="text-base font-medium text-gray-900"> Password </label>
 
-                                        <Link to='/reset-password' className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
+                                        <Link onClick={handlePassReset} className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
                                     </div>
                                     <div className="mt-2.5">
                                         <input
@@ -165,7 +179,7 @@ const Login = () => {
                         <img className="w-full mx-auto" src="https://images.pexels.com/photos/1462630/pexels-photo-1462630.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
 
                         <div className="w-full max-w-md mx-auto xl:max-w-xl">
-                            <h3 className="text-2xl font-bold text-center text-black">Make Your Own Life</h3>
+                            <h3 className="text-2xl mt-5 font-bold text-center text-black">Make Your Own Life</h3>
                             <p className="leading-relaxed text-center text-gray-500 mt-2.5">If you want to be a successful man then you need to more hardwork.</p>
 
 

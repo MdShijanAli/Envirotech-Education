@@ -1,6 +1,6 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
-import toast from 'react-hot-toast';
+
 import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../images/logo.png'
 import img from '../../images/shijan.jpg'
@@ -11,7 +11,7 @@ const Register = () => {
     const [error, setError] = useState('');
     const [showpass, setShowPass] = useState(false);
     const navigate = useNavigate();
-    const { createUser, verifyEmail, providerLogin, updateUserProfile } = useContext(AuthContext);
+    const { createUser, providerLogin, updateUserProfile } = useContext(AuthContext);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -28,14 +28,15 @@ const Register = () => {
 
         }
 
+
+
         createUser(email, password)
             .then(result => {
                 const user = result.user;
                 setError('');
                 handleUpdateProfile(name, photoURL);
                 form.reset();
-                handleEmailVerification();
-                toast.success('Registration Successfull !!! Please Check Your Email and Verified Email to Login')
+                navigate('/')
                 console.log('New Created User', user);
             })
             .catch(error => {
@@ -66,17 +67,6 @@ const Register = () => {
 
     }
 
-    const handleEmailVerification = () => {
-        verifyEmail()
-            .then(() => {
-
-                console.log('Email Verified')
-            })
-            .catch(error => {
-                console.error('create user account error', error)
-            })
-
-    }
 
 
     const googleProvider = new GoogleAuthProvider();

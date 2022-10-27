@@ -1,26 +1,26 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-
 import logo from '../../images/logo.png';
 import { UserCircleIcon } from '@heroicons/react/24/solid'
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-// import toast from 'react-hot-toast';
+import toast from 'react-hot-toast';
+
 
 
 const Header = () => {
     const [navbar, setNavbar] = useState(false);
     const { user, logOut } = useContext(AuthContext);
     console.log('header user', user)
-    /*   const handleLogout = () => {
-          logOut()
-              .then(() => {
-                  console.log('successfuly logout');
-                  toast.success('You have logged Out Successfully!!')
-              })
-              .catch(error => {
-                  console.error('error', error.message)
-              })
-      } */
+    const handleLogout = () => {
+        logOut()
+            .then(() => {
+                console.log('successfuly logout');
+                toast.success('You have logged Out Successfully!!')
+            })
+            .catch(error => {
+                console.error('error', error.message)
+            })
+    }
     return (
         <nav className="w-full bg-purple-400 shadow sticky top-0 z-50">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
@@ -105,7 +105,7 @@ const Header = () => {
                             </Link>
 
                             {
-                                user?.uid ? <Link onClick={logOut}
+                                user?.uid ? <Link onClick={handleLogout}
 
                                     className="inline-block w-full px-4 py-2 text-center text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                                 >
@@ -153,7 +153,7 @@ const Header = () => {
 
 
                     {
-                        user?.uid ? <Link onClick={logOut}
+                        user?.uid ? <Link onClick={handleLogout}
 
                             className="px-4 text-center py-2 text-gray-800 bg-white rounded-md shadow hover:bg-gray-100"
                         >

@@ -18,9 +18,11 @@ const Profile = () => {
                 <h1 className="text-2xl text-center font-semibold">
                     {user?.displayName}
                 </h1>
-                <p className="text-lg text-black text-center">
-                    {user?.email}
-                </p>
+                {
+                    user?.email ? <p className="text-lg text-black text-center">
+                        {user?.email}
+                    </p> : <p className="text-lg text-black text-center">Apnaer Email Pawa Jay nai Vai</p>
+                }
             </div>
 
             <div className='text-center my-10'>
