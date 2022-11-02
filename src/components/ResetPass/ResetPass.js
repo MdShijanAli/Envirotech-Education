@@ -1,11 +1,11 @@
-import { getAuth, sendEmailVerification } from 'firebase/auth';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import app from '../../firebase/firebase.config';
+
+import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 const ResetPass = () => {
 
-    const auth = getAuth(app);
+    const { passResetEmail } = useContext(AuthContext)
     const [userEmail, setUserEmail] = useState('');
 
 
@@ -17,25 +17,23 @@ const ResetPass = () => {
     const handleEmailBlur = event => {
         const email = event.target.value;
         setUserEmail(email);
-        console.log(email);
+        console.log(email)
     }
 
-    const handleForgetPassword = () => {
+    const handlePassReset = () => {
         if (!userEmail) {
-            alert('please enter your email address')
+            toast.error('Please Enter Your EMail Address');
             return;
         }
-
-        sendEmailVerification(auth, userEmail)
+        passResetEmail(userEmail)
             .then(() => {
-                toast.success('Password Reset EMail sent. Please check your email address')
+                toast.success('Password Reset EMail Send. Check your email')
             })
             .catch(error => {
-                console.error(error)
+                console.error('password reset error', error.message)
             })
-
-
     }
+
     return (
         <form onSubmit={handleSubmit} className=" my-40 mx-5 card md:w-1/3 md:mx-auto bg-gradient-to-r from-purple-500 to-pink-500 shadow-xl">
             <div className="card-body">
@@ -50,7 +48,7 @@ const ResetPass = () => {
                     required
                 />
                 <div className="card-actions justify-center mt-5">
-                    <button onClick={handleForgetPassword} className="btn btn-primary">Reset Password</button>
+                    <button onClick={handlePassReset} className="btn btn-primary">Reset Password</button>
                 </div>
             </div>
         </form>

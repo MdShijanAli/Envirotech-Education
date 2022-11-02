@@ -3,20 +3,18 @@ import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import toast from 'react-hot-toast';
-// import toast from 'react-hot-toast';
 
 
 
 
 const Login = () => {
 
-    const [userEmail, setUserEmail] = useState('');
+
 
     const navigate = useNavigate();
     const location = useLocation();
     const [error, setError] = useState('');
-    const { passResetEmail, providerLogin, signIn } = useContext(AuthContext)
+    const { providerLogin, signIn } = useContext(AuthContext)
 
     const from = location.state?.from?.pathname || '/';
 
@@ -72,27 +70,6 @@ const Login = () => {
     }
 
 
-    const handleEmailBlur = (event) => {
-        const email = event.target.value;
-        setUserEmail(email);
-        console.log(email)
-    }
-
-
-
-    const handlePassReset = () => {
-        if (!userEmail) {
-            toast.error('Please Enter Your EMail Address');
-            return;
-        }
-        passResetEmail(userEmail)
-            .then(() => {
-                toast.success('Password Reset EMail Send. Check your email')
-            })
-            .catch(error => {
-                console.error('password reset error', error.message)
-            })
-    }
 
 
 
@@ -113,7 +90,7 @@ const Login = () => {
                                     <label htmlFor="email" className="text-base font-medium text-gray-900"> Email address </label>
                                     <div className="mt-2.5">
                                         <input
-                                            onBlur={handleEmailBlur}
+
                                             required
                                             type="email"
                                             name="email"
@@ -128,7 +105,7 @@ const Login = () => {
                                     <div className="flex items-center justify-between">
                                         <label htmlFor="password" className="text-base font-medium text-gray-900"> Password </label>
 
-                                        <Link onClick={handlePassReset} className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
+                                        <Link to='/reset-password' className="text-sm font-medium text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700"> Forgot password? </Link>
                                     </div>
                                     <div className="mt-2.5">
                                         <input

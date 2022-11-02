@@ -8,6 +8,8 @@ import { AuthContext } from '../Context/AuthProvider/AuthProvider';
 
 
 const Register = () => {
+    const [wrongPass, setWrongPass] = useState('');
+
     const [error, setError] = useState('');
     const [showpass, setShowPass] = useState(false);
     const navigate = useNavigate();
@@ -28,6 +30,12 @@ const Register = () => {
 
         }
 
+
+
+        if (password !== confirm) {
+            setWrongPass('PassWord did not match');
+            return;
+        }
 
 
         createUser(email, password)
@@ -225,6 +233,10 @@ const Register = () => {
                         <div className='text-red-600'>
                             {error}
                         </div>
+                        <div className='text-red-600'>
+                            {wrongPass}
+                        </div>
+
                         <div className="mt-8">
                             <button role="button" className="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
                                 Create my account

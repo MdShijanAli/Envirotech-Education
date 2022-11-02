@@ -1,11 +1,16 @@
+
 import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+
 const CoursesPage = ({ course }) => {
+
     return (
         <div>
-            <div className="my-5 md:my-0">
+
+
+            <div className="my-5 md:my-0" >
                 <div className=" bg-white px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
                     <h3 className="mb-3 text-xl font-bold text-indigo-600">{course?.level}</h3>
                     <div className="relative">
@@ -32,6 +37,8 @@ const CoursesPage = ({ course }) => {
                 </div>
 
             </div>
+
+
         </div>
     );
 };
